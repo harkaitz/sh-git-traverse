@@ -34,7 +34,7 @@ git_traverse() {
         printf "\033[0;32m%s\033[0m\\n" "== Entered ${p} =============="
         git_traverse_sh "${p}" 'git status || true'
         while true; do
-            echo -n "[`pwd`] q/n(next)/y(shell)/a(auto update)/v(diff)/d(pull)/u(push)/c(commit)/s(status)? "
+            echo -n "q/n(next)/y(shell)/a(auto update)/v(diff)/d(pull)/u(push)/c(commit)/s(status)? "
             read -r ynq </dev/tty
             case "${ynq}" in
                 d)  git_traverse_sh "${p}" 'git pull --recurse-submodules=on-demand || true';;
